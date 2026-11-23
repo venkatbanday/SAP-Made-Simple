@@ -2,7 +2,12 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SAP Made Simple: learn, practise, get hired</title>
+<title>SAP Made Simple | Interactive SAP Learning Hub</title>
+<meta name="description" content="Free interactive SAP learning hub: SAP modules, T-codes, real-world scenarios, interview preparation, quizzes and progress tracking.">
+<meta name="theme-color" content="#091c35">
+<meta property="og:title" content="SAP Made Simple — Learn. Practise. Get Hired.">
+<meta property="og:description" content="Free interactive SAP learning, practice scenarios, quizzes and interviews.">
+<meta property="og:image" content="banner.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;500;700&display=swap">
 <style>
 :root{--bg:#eef3f8;--card:#fff;--ink:#0d2238;--mute:#52667a;--line:#d3dde8;--blue:#0a6ed1;--blueT:#dcebfb;--amber:#b45f06;--amberT:#fdf0dc;--green:#1b7a46;--greenT:#dff3e8;--red:#b3261e;--redT:#fbe4e2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -13,7 +18,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Public Sans",system-ui,sans-serif}
 h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",sans-serif;line-height:1.15;margin:0 0 .5rem}
 .wrap{max-width:980px;margin:0 auto;padding:0 16px}
-header{padding:28px 0 8px}
+header{padding:40px 0 22px}
 h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:800;letter-spacing:-.02em}
 .sub{color:var(--mute);max-width:60ch;margin:.25rem 0 0}
 nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;display:flex;gap:6px;overflow-x:auto;border-bottom:1px solid var(--line)}
@@ -52,14 +57,30 @@ label{font-size:.9rem;color:var(--mute);display:block}
 footer{margin:32px 0 24px;padding:18px;border-radius:12px;background:var(--blueT)}
 a{color:var(--blue);font-weight:700}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
-</style></head><body>
+</style>
+<style>
+:root{--bg:#f2f6fc;--card:#ffffff;--ink:#10253f;--mute:#506780;--line:#dce5f1;--blue:#0a6ed1;--blueT:#e6f1ff}
+body{background:linear-gradient(175deg,#dfeeff 0,#f5f8fd 350px,var(--bg) 700px);min-height:100vh}
+header{background:radial-gradient(circle at 88% 12%,rgba(36,184,250,.28),transparent 35%),linear-gradient(125deg,#071d39,#0b3b73);color:white;border-radius:22px;padding:36px 34px;margin:20px 0 8px;box-shadow:0 18px 44px rgba(11,47,95,.16)}
+header .sub{color:#d2e7ff;max-width:67ch} .eyebrow{font-weight:800;letter-spacing:.12em;color:#83e2ff;font-size:.74rem;margin-bottom:9px}
+.gradient-word{color:#55e0f7}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.hero-actions .btn{border-radius:999px;padding:12px 19px}.hero-actions .btn.alt{background:transparent;border:1px solid #a7d7f6;color:#fff}
+nav{border-radius:12px;top:0;box-shadow:0 4px 20px rgba(15,45,88,.08);padding:12px 8px}nav button{transition:background .2s,transform .2s}nav button:hover{transform:translateY(-1px)}
+.card,details{box-shadow:0 4px 16px rgba(12,45,90,.045)}.card{border-radius:16px}.card h2,.card h3{letter-spacing:-.025em}
+.kpi{font-size:2rem;font-weight:800;line-height:1.2}.muted{color:var(--mute)}.mini{font-size:.84rem}.action-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.action-grid button{min-height:95px;text-align:left;white-space:normal;border-radius:14px}
+.search-result{display:block;padding:12px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}.search-result:hover{background:var(--blueT)}
+textarea,select,input[type=search]{font:inherit;width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+select{max-width:400px} .note-area{min-height:170px;resize:vertical}.notice{font-size:.86rem;color:var(--mute)}
+@media(max-width:640px){header{padding:25px 20px;margin-top:8px}h1{font-size:2.25rem}.wrap{padding:0 10px}.card{padding:15px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1623;--card:#13243a;--ink:#e6eef7;--mute:#9db0c4;--line:#2a405a;--blue:#5aa9f5;--blueT:#163556}body{background:#0b1623}}
+</style>
+</head><body>
 <div class="wrap">
-<header><h1>SAP made simple</h1>
-<p class="sub">Learn how SAP works across every department, fix the problems you will really meet, practise with quizzes, and prepare for implementation interviews. Free for everyone.</p></header>
-<nav id="nav"></nav>
+<header><div class="eyebrow">FREE • SELF-PACED • INTERACTIVE</div><h1>SAP <span class="gradient-word">Made Simple</span></h1>
+<p class="sub">Learn how SAP works across every department, fix the problems you will really meet, practise with quizzes, and prepare for implementation interviews. Free for everyone.</p><div class="hero-actions"><button class="btn" onclick="setTab('dashboard')">Explore dashboard</button><button class="btn alt" onclick="setTab('scenario')">Practise scenarios</button></div></header>
+<nav id="nav" aria-label="Learning sections"></nav>
 <main id="main"></main>
 <footer>
-<h3>About the builder</h3>
+<p class="notice">Independent educational project. Not affiliated with or endorsed by SAP SE. SAP and SAP S/4HANA are trademarks of SAP SE or its affiliates.</p><h3>About the builder</h3>
 <p><b>VB (Venkateswararao Banday)</b> is a multi-sector programme and operations leader with the right to work in the UK and India, looking for roles in London.</p>
 <p>I build apps with AI and share them free to spread knowledge and useful information. If this helped you, and you know of any opportunity or can refer me, I would be very grateful.</p>
 <p><a href="https://wa.me/919962507575">WhatsApp +91 9962507575</a> · <a href="https://wa.me/447391522993">WhatsApp +44 7391 522993</a> · <a href="https://www.linkedin.com/in/venkateswararao-banday">LinkedIn</a></p>
@@ -68,7 +89,7 @@ a{color:var(--blue);font-weight:700}
 </div>
 <script>
 const $=s=>document.querySelector(s);
-const TABS=[["start","Start here"],["depts","Departments"],["bom","BOM and variances"],["why","Why SAP"],["quiz","Practice quiz"],["interview","Interview prep"],["path","6-week path"],["err","Error finder"],["vid","Videos and links"],["gloss","Glossary"]];
+const TABS=[["dashboard","Dashboard"],["start","Start here"],["scenario","Case studies"],["flash","Flashcards"],["tcodes","T-code finder"],["notes","My notes"],["depts","Departments"],["bom","BOM and variances"],["why","Why SAP"],["quiz","Practice quiz"],["interview","Interview prep"],["path","6-week path"],["err","Error finder"],["vid","Videos and links"],["gloss","Glossary"]];
 const D=[
 {id:"proc",n:"Process / Production",m:"PP",s:"Turns materials into finished goods using a BOM (recipe) and a routing (steps).",f:["Material master","BOM","Routing","Production order","Goods issue","Confirmation","Goods receipt"],c:[["MM01","Create material"],["CS01 / CS02 / CS03","Create, change, display BOM"],["CO01 / CO02 / CO03","Production order"],["CO11N","Confirm production"],["COOIS","Order information list"],["MD04","Stock and requirements"]],i:[["Order cannot be released","Check material availability and missing components in CO02, then the status in the header. Fix the BOM or stock, then release again."],["Backflush consumption does not match actual","The BOM quantity differs from real usage. Compare in COOIS and MB51, correct the BOM with CS02, post the difference with MIGO movement 261 or 262. See the BOM tab."],["Wrong yield or scrap","Add scrap % in the BOM or material master, and confirm scrap in CO11N."]]},
 {id:"mm",n:"Procurement",m:"MM",s:"Buys what the plant needs, from request to invoice, with approvals and three-way match.",f:["Purchase requisition","RFQ and quote","Purchase order","Goods receipt","Invoice","Payment"],c:[["ME51N","Purchase requisition"],["ME21N / ME23N","Create, display PO"],["MIGO","Goods receipt (movement 101)"],["MIRO","Invoice verification"],["MR11","Clear GR/IR account"],["ME2N","PO reports"]],i:[["Invoice blocked in MIRO","Price or quantity differs from PO or GR. Check tolerance, correct the PO or GR, or ask the buyer to approve the variance. No chasing by email: the PO history in ME23N shows everything."],["GR/IR balance keeps growing","Goods received but not invoiced, or the reverse. Run MR11 and ME2N, clear old items monthly."],["PO stuck in release","Release strategy needs an approver. Check ME28 or ME29N and the approver list."]]},
@@ -128,7 +149,7 @@ function bom(){return `<section><div class="card"><h2>BOM fixing: actual vs auto
 <div><label>BOM qty per unit</label><input type="number" id="a" value="2"></div><div><label>Units produced</label><input type="number" id="b" value="1000"></div><div><label>Actual consumed</label><input type="number" id="c" value="2150"></div><div><label>Price per unit</label><input type="number" id="p" value="10"></div></div>
 <button class="btn" onclick="calc()">Calculate</button><div id="res" style="margin-top:10px"></div></div>
 <div class="card"><h3>Reconciliation checklist</h3><div class="chips"><button class="chip" aria-pressed="true" id="cw" onclick="cad('w')">Weekly</button><button class="chip" aria-pressed="false" id="cm" onclick="cad('m')">Month end</button></div><div id="cl"></div></div></section>`}
-function calc(){const a=+$("#a").value,b=+$("#b").value,c=+$("#c").value,p=+$("#p").value,e=a*b,v=c-e,pc=e?(v/e*100):0;$("#res").innerHTML=`<div class="${v>0?'bad':'good'}"><span class="big">${v>0?'+':''}${v.toLocaleString()} units (${pc.toFixed(1)}%)</span><br>Backflushed by SAP: ${e.toLocaleString()}. Actual: ${c.toLocaleString()}. Value difference: ${(v*p).toLocaleString()}.<br>${Math.abs(pc)>2?'Above 2%: investigate scrap, yield and the BOM now, then fix with CS02.':'Within 2%: monitor and review next cycle.'}</div>`}
+function calc(){const a=+$("#a").value,b=+$("#b").value,c=+$("#c").value,p=+$("#p").value,e=a*b,v=c-e,pc=e?(v/e*100):0;$("#res").innerHTML=`<div class="${v>0?'bad':'good'}"><span class="big">${v>0?'+':''}${v.toLocaleString()} units (${pc.toFixed(1)}%)</span><br>Backflushed by SAP: ${e.toLocaleString()}. Actual: ${c.toLocaleString()}. Value difference: ${(v*p).toLocaleString()}.<br>${Math.abs(pc)>2?'Above the example 2% review threshold: investigate the root cause; follow approved change controls.':'Within the example 2% threshold: monitor against your organisation policy.'}</div>`}
 function cad(k){const l=k=="w"?BOMC:BOMM;$("#cw").setAttribute("aria-pressed",k=="w");$("#cm").setAttribute("aria-pressed",k=="m");$("#cl").innerHTML=l.map((x,i)=>`<label style="display:flex;gap:8px;color:var(--ink);padding:5px 0"><input type="checkbox"> ${x}</label>`).join("")}
 function why(){return `<section><div class="card"><h2>Why SAP beats the old way</h2><p>In older systems, departments kept their own data. People phoned, emailed and waited. SAP gives one platform where everyone sees the same live data.</p></div>${WHY.map(w=>`<div class="row card"><div class="bad"><b>Before</b><br>${w[0]}</div><div class="good"><b>With SAP</b><br>${w[1]}</div></div>`).join("")}</section>`}
 function quiz(){if(qi>=Q.length){const pc=Math.round(score/Q.length*100);return `<section><div class="card"><h2>Your score: ${score} / ${Q.length}</h2><div class="bar"><b style="width:${pc}%"></b></div><p>${pc>=80?'Excellent. You are ready for interviews.':pc>=50?'Good start. Review the departments tab and try again.':'Keep going. Read the department pages, then retake.'}</p><button class="btn" onclick="qi=0;score=0;ans=false;render()">Try again</button></div></section>`}
@@ -141,6 +162,53 @@ return `<section><div class="card"><h2>How to pass an SAP implementation intervi
 ${L.map(x=>{const k=IQ.indexOf(x);return `<details><summary>${x[1]} <span class="tag">${x[0]}</span></summary><div><p>${x[2]}</p><label style="display:flex;gap:8px;color:var(--ink)"><input type="checkbox" ${done[k]?'checked':''} onchange="this.checked?done[${k}]=1:delete done[${k}];iv2()"> I can answer this in my own words</label></div></details>`}).join("")}</section>`}
 function iv2(){const n=Object.keys(done).length;document.querySelector("section p b").textContent=n;document.querySelector(".bar b").style.width=n/IQ.length*100+"%"}
 function render(){nav();$("#main").innerHTML={start,depts,bom,why,quiz,interview:iv,path:pathv,err:errv,vid:vidv,gloss:glv}[tab]();if(tab=="bom")cad("w");if(tab=="err")el();if(tab=="gloss")gl()}
+
+// Version 2 additions. All progress is stored only on this browser/device.
+const STORAGE_KEY='sap-made-simple-v2';
+const CASES=[
+ {area:'Procurement / MM',title:'Invoice blocked during three-way matching',story:'A supplier invoice is blocked because the billed quantity exceeds goods received.',choices:['Force a manual payment immediately','Compare PO history, goods receipt, invoice quantity and tolerances; correct through approvals','Delete the original purchase order'],answer:1,why:'Investigate PO/GR/invoice variance and tolerance configuration with the responsible team. Never bypass approvals.'},
+ {area:'Production / PP',title:'Actual component use is higher than backflush',story:'Production consumed 1,150 kg while planned BOM usage was 1,000 kg.',choices:['Investigate scrap, BOM, confirmations and movements before authorised adjustments','Delete the production order','Ignore the difference until year-end'],answer:0,why:'Review component movements, production confirmations and master data; then follow approved correction and costing procedures.'},
+ {area:'Sales / SD',title:'Order cannot proceed to delivery',story:'A sales order exists, but the warehouse cannot create a delivery.',choices:['Change the customer credit limit without approval','Bill the order before goods issue','Inspect schedule lines, delivery blocks, stock, shipping data and credit status'],answer:2,why:'Diagnose the document flow and root cause before making authorised changes.'},
+ {area:'Quality / QM',title:'Goods remain in quality stock',story:'An inspection lot exists after goods receipt, but the material is not available for unrestricted use.',choices:['Skip inspection and move stock manually','Check inspection results and authorised usage decision','Delete the lot'],answer:1,why:'Follow inspection and usage decision controls; release depends on results and local configuration.'},
+ {area:'Finance / FI',title:'Period is closed',story:'A user attempts to post an invoice into a closed financial period.',choices:['Request finance to confirm the permissible posting period and policy','Change posting configuration yourself','Use an unrelated GL account'],answer:0,why:'Period changes must be controlled by finance. Correct treatment depends on the business close policy.'},
+ {area:'Security / Basis',title:'User has no authorisation',story:'An employee cannot open an SAP transaction required for their work.',choices:['Share another employee login','Grant SAP_ALL','Capture failed authorisation details and submit an access request'],answer:2,why:'Least-privilege access and segregation of duties come before convenience.'}
+];
+let caseIndex=0,caseAnswer=null,flashIndex=0,flashReveal=false,searchText='';
+const safeText=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function saveProgress(){try{savedNotes=$('#noteText')?.value??savedNotes;localStorage.setItem(STORAGE_KEY,JSON.stringify({pd,done,bestScore,notes:savedNotes}));}catch(e){}}
+let bestScore=0,savedNotes='';
+try{let old=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}');pd=old.pd&&typeof old.pd==='object'?old.pd:{};done=old.done&&typeof old.done==='object'?old.done:{};bestScore=Number(old.bestScore)||0;savedNotes=typeof old.notes==='string'?old.notes:'';}catch(e){}
+function dashboard(){return `<section><div class="grid">
+<div class="card"><div class="muted">Learning path completion</div><div class="kpi">${pp()}%</div><div class="bar"><b style="width:${pp()}%"></b></div><button class="btn alt" onclick="setTab('path')">Continue path</button></div>
+<div class="card"><div class="muted">Interview answers practised</div><div class="kpi">${Object.keys(done).length} / ${IQ.length}</div><button class="btn alt" onclick="setTab('interview')">Prepare answers</button></div>
+<div class="card"><div class="muted">Best quiz score</div><div class="kpi">${bestScore}%</div><button class="btn alt" onclick="setTab('quiz')">Take quiz</button></div></div>
+<div class="card"><h2>Find anything in the learning hub</h2><input type="search" id="globalSearch" oninput="updateSearch()" placeholder="Search SAP modules, T-codes, errors and glossary" aria-label="Search learning content"><div id="searchResults"></div></div>
+<div class="card"><h2>Quick actions</h2><div class="action-grid"><button class="btn alt" onclick="setTab('depts')">Explore SAP modules</button><button class="btn alt" onclick="setTab('scenario')">Solve a real-world case</button><button class="btn alt" onclick="setTab('flash')">Study flashcards</button><button class="btn alt" onclick="setTab('tcodes')">Find a T-code</button><button class="btn alt" onclick="setTab('bom')">BOM variance calculator</button><button class="btn alt" onclick="setTab('err')">Troubleshoot an error</button></div></div>
+<div class="card"><h3>Learn responsibly</h3><p class="notice">Examples and transaction codes are educational; ECC and S/4HANA transactions, role permissions, Fiori equivalents and configuration differ by release and landscape. Practise only in authorised training systems.</p></div></section>`}
+const searchItems=()=>[
+ ...D.map(d=>({label:d.n,desc:d.s,tab:'depts',dept:d.id})),
+ ...D.flatMap(d=>d.c.map(c=>({label:c[0],desc:c[1]+' · '+d.n,tab:'tcodes'}))),
+ ...ERR.map(e=>({label:e[0],desc:e[1],tab:'err'})),
+ ...GL.map(g=>({label:g[0],desc:g[1],tab:'gloss'}))
+];
+function updateSearch(){let v=($('#globalSearch')?.value||'').toLowerCase().trim();let r=v?searchItems().filter(x=>(x.label+' '+x.desc).toLowerCase().includes(v)).slice(0,18):[];$('#searchResults').innerHTML=v?(r.map(x=>`<a class="search-result" href="#${x.tab}" onclick="${x.dept?`dept='${x.dept}';`:''}setTab('${x.tab}');return false"><b>${safeText(x.label)}</b> <span class="muted mini">${safeText(x.desc)}</span></a>`).join('')||'<p>No matching content found.</p>'):''}
+function scenario(){let c=CASES[caseIndex];return `<section><div class="card"><span class="tag">CASE ${caseIndex+1} / ${CASES.length} · ${c.area}</span><h2>${c.title}</h2><p>${c.story}</p>${c.choices.map((a,i)=>`<button class="opt ${caseAnswer!==null?(i===c.answer?'ok':i===caseAnswer?'no':''):''}" onclick="chooseCase(${i})" ${caseAnswer!==null?'disabled':''}>${safeText(a)}</button>`).join('')}${caseAnswer!==null?`<div class="${caseAnswer===c.answer?'good':'bad'}"><b>${caseAnswer===c.answer?'Correct approach.':'Review the safer approach.'}</b><p>${c.why}</p></div>`:''}<p><button class="btn" onclick="caseIndex=(caseIndex+1)%CASES.length;caseAnswer=null;render()">Next case</button> <button class="btn alt" onclick="caseIndex=0;caseAnswer=null;render()">Restart</button></p></div></section>`}
+function chooseCase(n){if(caseAnswer!==null)return;caseAnswer=n;render()}
+const FLASH=[...GL.map(x=>({q:x[0],a:x[1]})),...D.flatMap(d=>d.c.map(c=>({q:c[0]+' ('+d.m+')',a:c[1]})))];
+function flash(){let f=FLASH[flashIndex];return `<section><div class="card"><span class="tag">CARD ${flashIndex+1} / ${FLASH.length}</span><h2>Flashcard practice</h2><p class="muted">Think of the answer before revealing it.</p><div class="card" style="min-height:140px"><h2>${safeText(f.q)}</h2>${flashReveal?`<p>${safeText(f.a)}</p>`:'<p class="muted">Answer hidden</p>'}</div><button class="btn" onclick="flashReveal=!flashReveal;render()">${flashReveal?'Hide':'Reveal'} answer</button> <button class="btn alt" onclick="flashIndex=(flashIndex+1)%FLASH.length;flashReveal=false;render()">Next card</button> <button class="btn alt" onclick="flashIndex=(flashIndex-1+FLASH.length)%FLASH.length;flashReveal=false;render()">Previous</button></div></section>`}
+const TCODES=D.flatMap(d=>d.c.flatMap(c=>c[0].split(/\s*\/\s*/).map(code=>({code:code.trim(),meaning:c[1],department:d.n})))).filter(x=>x.code.length>1);
+function tcodes(){return `<section><div class="card"><h2>SAP T-code finder</h2><p class="notice">Use these codes as learning references. Availability varies by SAP release and assigned authorisations; use relevant Fiori apps where applicable.</p><input id="tcodeSearch" type="search" placeholder="Search code, meaning or department" oninput="filterTCodes()" aria-label="Search SAP transaction codes"><p class="mini muted">${TCODES.length} reference entries across modules</p></div><div id="tcodeResults"></div></section>`}
+function filterTCodes(){let q=($('#tcodeSearch')?.value||'').toLowerCase();let items=TCODES.filter(t=>(t.code+' '+t.meaning+' '+t.department).toLowerCase().includes(q)).slice(0,80);$('#tcodeResults').innerHTML=`<div class="card tw"><table><thead><tr><th>Transaction</th><th>Purpose</th><th>Area</th></tr></thead><tbody>${items.map(t=>`<tr><td><code>${safeText(t.code)}</code></td><td>${safeText(t.meaning)}</td><td>${safeText(t.department)}</td></tr>`).join('')}</tbody></table></div>`}
+function notesv(){return `<section><div class="card"><h2>My private study notes</h2><p class="notice">Notes remain on this browser/device. Export a backup before clearing your browser data. Avoid sensitive company data.</p><textarea class="note-area" id="noteText" oninput="saveProgress()" placeholder="Write your SAP learnings, STAR interview examples, questions to review...">${safeText(savedNotes)}</textarea><p><button class="btn" onclick="savedNotes=$('#noteText').value;saveProgress();downloadNotes()">Export notes (.txt)</button> <button class="btn alt" onclick="exportProgress()">Export study progress (.json)</button></p></div><div class="card"><h3>Backup and privacy</h3><p class="notice">No account, analytics tracker or external AI service is required. Progress is saved locally and is not synchronised across devices.</p><button class="btn alt" onclick="if(confirm('Clear all locally saved notes and progress?')){localStorage.removeItem(STORAGE_KEY);pd={};done={};bestScore=0;savedNotes='';render()}">Clear local progress</button></div></section>`}
+function downloadFile(name,text,type){let a=document.createElement('a');let blob=new Blob([text],{type});let url=URL.createObjectURL(blob);a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)}
+function downloadNotes(){downloadFile('sap-study-notes.txt',savedNotes,'text/plain')}
+function exportProgress(){downloadFile('sap-learning-progress.json',JSON.stringify({path:pd,interview:done,bestQuizPercent:bestScore,exportedAt:new Date().toISOString()},null,2),'application/json')}
+// Persist changes from legacy click/checkbox handlers without rewriting their lesson content.
+document.addEventListener('change',e=>{if(e.target?.type==='checkbox'){savedNotes=$('#noteText')?.value??savedNotes;saveProgress();}});
+const priorPick=pick;pick=function(i){priorPick(i);if(qi===Q.length-1){bestScore=Math.max(bestScore,Math.round(score/Q.length*100));saveProgress()}};
+const priorRender=render;
+render=function(){nav();let pages={start,depts,bom,why,quiz,interview:iv,path:pathv,err:errv,vid:vidv,gloss:glv,dashboard,scenario,flash,tcodes,notes:notesv};$('#main').innerHTML=(pages[tab]||dashboard)();if(tab==='bom')cad('w');if(tab==='err')el();if(tab==='gloss')gl();if(tab==='tcodes')filterTCodes()};
+
 const h=location.hash.slice(1);if(TABS.some(t=>t[0]==h))tab=h;
 addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(TABS.some(t=>t[0]==h)&&h!=tab){tab=h;render()}});
 render();
